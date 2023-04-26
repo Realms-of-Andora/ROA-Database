@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Dapper;
 using Npgsql;
 
 namespace realmsofandora.databasewrappers
@@ -17,24 +16,21 @@ namespace realmsofandora.databasewrappers
 
         public PostgresqlWrapper(DatabaseConfig databaseConfig)
         {
-            this.conn = new NpgsqlConnection(String.Format(this.connString,
+            conn = new NpgsqlConnection(String.Format(this.connString,
                 databaseConfig.Server, databaseConfig.Username, databaseConfig.Database, databaseConfig.Port, databaseConfig.Password));
             conn.Open();
         }
         public int QueryInsert(string sql, Dictionary<string,object> parameters)
         {
-            int rowsAffected = -1;
-            using (NpgsqlCommand cmd = new NpgsqlCommand(sql, this.conn))
-            {
-                cmd.Parameters.Add(new NpgsqlParameter(parameters.Keys.ToString(), DbType.Object));
-                cmd.Parameters[0].Value = parameters.Values;
-                rowsAffected = cmd.ExecuteNonQuery();
-            }
-            return rowsAffected;
+            return conn.Execute(sql, new DynamicParameters(parameters));
         }
         public bool QueryExists(string sql, Dictionary<string, object> parameters)
         {
-            return false;
+            return QueryInsert(sql, parameters) > 0;
+        }
+        public List<T> Query<T>(string sql, Dictionary<string, object> parameters)
+        {
+            return conn.Query<T>(sql, new DynamicParameters(parameters)).ToList();
         }
     }
 }
