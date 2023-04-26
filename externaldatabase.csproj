@@ -108,8 +108,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseConfig.cs" />
-    <Compile Include="databases\IVSDatabase.cs" />
-    <Compile Include="databases\PostgresqlWrapper.cs" />
+    <Compile Include="src\database-wrappers\IVSDatabase.cs" />
+    <Compile Include="src\database-wrappers\PostgresqlWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Core.cs" />
   </ItemGroup>
