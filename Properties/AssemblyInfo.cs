@@ -6,7 +6,7 @@ using Vintagestory.API.Common;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("externaldatabase")]
+[assembly: AssemblyTitle("roadatabase")]
 [assembly: AssemblyDescription("")]
 //[assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
@@ -35,7 +35,7 @@ using Vintagestory.API.Common;
 // by using the '*' as shown below:
 [assembly: AssemblyVersion("1.0.*")]
 
-[assembly: ModInfo( "ROA Databases", "roa-datanases",
+[assembly: ModInfo( "ROA Database", "roadatabase",
     Version = "1.0.0",
     Description = "A VS mod which allows connectivity to external databases, primarially used in the ROA set of mods.",
     Authors = new[] { "Realms of Andora" })]
