@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>realmsofandora</RootNamespace>
-    <AssemblyName>externaldatabase</AssemblyName>
+    <AssemblyName>roadatabase</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\..\mods\</OutputPath>
-    <IntermediateOutputPath>..\..\obj\Debug\externaldatabase\</IntermediateOutputPath>
+    <IntermediateOutputPath>..\..\obj\Debug\roadatabase\</IntermediateOutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -28,7 +28,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\..\mods\</OutputPath>
-    <IntermediateOutputPath>..\..\obj\Release\externaldatabase\</IntermediateOutputPath>
+    <IntermediateOutputPath>..\..\obj\Release\roadatabase\</IntermediateOutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
