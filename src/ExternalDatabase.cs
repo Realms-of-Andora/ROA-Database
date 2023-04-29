@@ -14,8 +14,9 @@ namespace realmsofandora
 
             if (databaseConfig.DatabaseType.Equals("postgresql"))
             {
-                this.Instance = new PostgresqlWrapper(databaseConfig);
-            } else
+                Instance = new PostgresqlWrapper(databaseConfig);
+            }
+            else
             {
                 throw new NotImplementedException("Invalid database type was entered.");
             }

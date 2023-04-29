@@ -20,17 +20,8 @@ namespace realmsofandora.databasewrappers
                 databaseConfig.Server, databaseConfig.Username, databaseConfig.Database, databaseConfig.Port, databaseConfig.Password));
             conn.Open();
         }
-        public int QueryInsert(string sql, Dictionary<string,object> parameters)
-        {
-            return conn.Execute(sql, new DynamicParameters(parameters));
-        }
-        public bool QueryExists(string sql, Dictionary<string, object> parameters)
-        {
-            return QueryInsert(sql, parameters) > 0;
-        }
-        public List<T> Query<T>(string sql, Dictionary<string, object> parameters)
-        {
-            return conn.Query<T>(sql, new DynamicParameters(parameters)).ToList();
-        }
+        public int QueryInsert(string sql, Dictionary<string, object> parameters) => conn.Execute(sql, new DynamicParameters(parameters));
+        public bool QueryExists(string sql, Dictionary<string, object> parameters) => QueryInsert(sql, parameters) > 0;
+        public List<T> Query<T>(string sql, Dictionary<string, object> parameters) => conn.Query<T>(sql, new DynamicParameters(parameters)).ToList();
     }
 }

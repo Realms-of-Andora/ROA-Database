@@ -35,9 +35,9 @@ using Vintagestory.API.Common;
 // by using the '*' as shown below:
 [assembly: AssemblyVersion("1.0.*")]
 
-[assembly: ModInfo( "externaldatabase", "externaldatabase",
+[assembly: ModInfo( "ROA Databases", "roa-datanases",
     Version = "1.0.0",
-    Description = "To be added",
-    Authors = new[] { "Unkown" })]
+    Description = "A VS mod which allows connectivity to external databases, primarially used in the ROA set of mods.",
+    Authors = new[] { "Realms of Andora" })]
 
  [assembly: ModDependency("game")]
