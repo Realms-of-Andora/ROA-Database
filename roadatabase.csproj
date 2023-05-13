@@ -110,11 +110,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\DatabaseConfig.cs" />
-    <Compile Include="src\IVSDatabase.cs" />
-    <Compile Include="src\database-wrappers\PostgresqlWrapper.cs" />
+    <Compile Include="Database\DatabaseConfig.cs" />
+    <Compile Include="Database\DatabaseNoteInitializedException.cs" />
+    <Compile Include="Database\ExternalDatabase.cs" />
+    <Compile Include="Database\IVSDatabase.cs" />
+    <Compile Include="Database\DatabaseWrappers\PostgresqlWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="src\ExternalDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

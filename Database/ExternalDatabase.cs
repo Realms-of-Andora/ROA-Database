@@ -1,13 +1,17 @@
-using System;
-using realmsofandora.databasewrappers;
+﻿using System;
+using RealmsOfAndora.Database.DatabaseWrappers;
+using RealmsOfAndora.Database;
 using Vintagestory.API.Common;
+using Vintagestory.API.Server;
+using realmsofandora.Database;
 
 namespace realmsofandora
 {
-    class ExternalDatabase : ModSystem
+    public class ExternalDatabase : ModSystem
     {
-        public IVSDatabase Instance;
-        public override void Start(ICoreAPI api)
+        //TODO: This should only be settable within Start Server Side or in a future reconnect function.
+        static IVSDatabase Instance;
+        public override void StartServerSide(ICoreServerAPI api)
         {
             DatabaseConfig.LoadConfig(api);
             DatabaseConfig databaseConfig = DatabaseConfig.Current;
@@ -25,6 +29,14 @@ namespace realmsofandora
         public override bool ShouldLoad(EnumAppSide side)
         {
             return side == EnumAppSide.Server;
+        }
+        public static IVSDatabase GetDatabase()
+        {
+            if (Instance == null)
+            {
+                throw new DatabaseNotInitializedException();
+            }
+            return Instance;
         }
     }
 }

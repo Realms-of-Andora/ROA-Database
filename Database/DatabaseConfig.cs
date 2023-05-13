@@ -1,6 +1,6 @@
 ﻿using Vintagestory.API.Common;
 
-namespace realmsofandora
+namespace RealmsOfAndora.Database
 {
     internal class DatabaseConfig
     {
